@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head data-no-turbolink>
+</head>
+<script type="text/javascript">
+
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+
+
+function signinCallback(authResult) {
+    if (authResult) {
+        if (authResult['error'] == undefined) {
+            var button = document.getElementById("signinButton");
+            button.style["display"]="none";
+
+            window.alert("Sorry you are not authorized to visit this site");
+            gapi.auth.signOut();
+            
+        } else {
+            console.log(authResult['error']);
+        } 
+    } else { 
+        console.log('Empty authResult');
+    }
+}
+
+</script>
+
+<body data-no-turbolink>
+<div id="signinButton">
+    <span
+        class="g-signin"
+        data-callback="signinCallback"
+        data-redirecturi="postmessage"
+        data-clientid="1015253590116-sucmk4t6hpf1dvgh5ai2tbe6v63t9ijl.apps.googleusercontent.com"
+        data-cookiepolicy="single_host_origin"
+        data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
+    </span>
+</div>
+</body>

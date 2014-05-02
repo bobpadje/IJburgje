@@ -1,0 +1,14 @@
+<div id="signinButton">
+    <span
+        class="g-signin"
+        data-callback="signinCallback"
+        data-redirecturi="postmessage"
+        data-clientid="1015253590116-sucmk4t6hpf1dvgh5ai2tbe6v63t9ijl.apps.googleusercontent.com"
+        data-cookiepolicy="single_host_origin"
+        data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
+    </span>
+</div>
+
+<%= form_tag({controller: 'access', action: 'attempt_login'}, method: 'post', name:  'mailform') %>
+    <%= hidden_field_tag 'email' %>
+
