@@ -9,10 +9,11 @@
 
 var profile, email;
 
+
 function signinCallback(authResult) {
     if (authResult) {
         if (authResult['error'] == undefined) {
-            var button = document.getElementById("signinButton");
+            var button = document.getElementById("gSignInWrapper");
             button.style["display"]="none";
             
             gapi.client.load('plus', 'v1', loadProfile);

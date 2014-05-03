@@ -1,12 +1,12 @@
-<div id="signinButton">
-    <span
-        class="g-signin"
-        data-callback="signinCallback"
-        data-redirecturi="postmessage"
-        data-clientid="1015253590116-sucmk4t6hpf1dvgh5ai2tbe6v63t9ijl.apps.googleusercontent.com"
-        data-cookiepolicy="single_host_origin"
-        data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
-    </span>
+<meta name="google-signin-clientid" content="1015253590116-sucmk4t6hpf1dvgh5ai2tbe6v63t9ijl.apps.googleusercontent.com" />
+<meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<meta name="google-signin-callback" content="signinCallback" />
+<meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.profile.emails.read" />
+<meta name="google-signin-redirecturi" content="postmessage" />
+
+<div id="gSignInWrapper">
+    <div class="g-signin" id="signin">
+    </div>
 </div>
 
 <%= form_tag({controller: 'access', action: 'attempt_login'}, method: 'post', name:  'mailform') %>
